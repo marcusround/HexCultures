@@ -190,14 +190,16 @@ class Hex {
 	}
 	
 	draw() {
-		if (this.genes) {
-		  let geneString = "#";
-		  for (let i = 0; i < 6; i++){
-		    geneString += this.genes[i];
-		  }
-		  fill (geneString);
-		} else {
-		  fill(25, 155, 67);
+		if (this.land) {
+			if (this.genes) {
+			  let geneString = "#";
+			  for (let i = 0; i < 6; i++){
+			    geneString += this.genes[i];
+			  }
+			  fill (geneString);
+			} else {
+			  fill(25, 155, 67);
+			}
 		}
 		push();
 		translate(this.pixelPos.x, this.pixelPos.y);
