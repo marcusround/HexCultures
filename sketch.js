@@ -200,17 +200,17 @@ class Hex {
 			} else {
 			  fill(25, 155, 67);
 			}
-		}
-		push();
-		translate(this.pixelPos.x, this.pixelPos.y);
-		beginShape();
+			push();
+			translate(this.pixelPos.x, this.pixelPos.y);
+			beginShape();
 
-		for (let i = 0; i < 6; i++) {
-			vertex((hexRadius-hexMargin/2)*cos(i*Math.PI/3), (hexRadius-hexMargin/2)*sin(i*Math.PI/3));
-		}
+			for (let i = 0; i < 6; i++) {
+				vertex((hexRadius-hexMargin/2)*cos(i*Math.PI/3), (hexRadius-hexMargin/2)*sin(i*Math.PI/3));
+			}
 
-		endShape(CLOSE);
-		pop();
+			endShape(CLOSE);
+			pop();
+		}
 	}
 }
 
