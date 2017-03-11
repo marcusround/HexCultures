@@ -44,7 +44,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(45, 67, 185);
   for (let y = 0; y < rows; y++) {
     for (let x = 0; x < columns; x++) {
       let hex = hexagons[x][y];
@@ -190,19 +190,15 @@ class Hex {
 	}
 	
 	draw() {
-        if (this.land === false) {
-          fill(45, 67, 185);  
-        } else if (this.genes) {
-          let geneString = "#";
-          for (let i = 0; i < 6; i++){
-            geneString += this.genes[i];
-          }
-          fill (geneString);
-        } else {
-          fill(25, 155, 67);
-	}
-	
-	if (this.land === true || frameCount < 2) {
+		if (this.genes) {
+		  let geneString = "#";
+		  for (let i = 0; i < 6; i++){
+		    geneString += this.genes[i];
+		  }
+		  fill (geneString);
+		} else {
+		  fill(25, 155, 67);
+		}
 		push();
 		translate(this.pixelPos.x, this.pixelPos.y);
 		beginShape();
@@ -213,7 +209,6 @@ class Hex {
 
 		endShape(CLOSE);
 		pop();
-		}
 	}
 }
 
